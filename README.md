@@ -1,14 +1,14 @@
-# wTooltip.js
+# wModal.js
 
 A jQuery modal plugin. [Check out the live demo](http://www.websanova.com/plugins/modals).
 
 
  - [Settings](https://github.com/websanova/wModal#settings)
  - [Examples](https://github.com/websanova/wModal#examples)
- - [Adding Messages](https://github.com/websanova/wModal#addingmessages)
- - [Adding Modals](https://github.com/websanova/wModal#addingmodals)
- - [Adding Buttons](https://github.com/websanova/wModal#addingbuttons)
- - [Adding Effects](https://github.com/websanova/wModal#addingeffects)
+ - [Adding Messages](https://github.com/websanova/wModal#adding-messages)
+ - [Adding Modals](https://github.com/websanova/wModal#adding-modals)
+ - [Adding Buttons](https://github.com/websanova/wModal#adding-buttons)
+ - [Adding Effects](https://github.com/websanova/wModal#adding-effects)
 
 
 ## Settings
