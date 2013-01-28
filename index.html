@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Websanova Modal</title>
+	
+	<script type="text/javascript" src="./inc/jquery.1.9.0.min.js"></script>
+	
+	<link rel="Stylesheet" type="text/css" href="./wModal.css" />
+	<script type="text/javascript" src="./wModal.js"></script>
+	
+	<!-- dynamically load prompts -->
+	<script type="text/javascript">
+		$.get('./prompts.html', function(data)
+		{
+			$('#templates').html(data);
+			
+			$('#wModal_yesNo').wModal({
+				btns:{
+					yes: function(){ console.log('original yes'); this.hide(); },
+					no: function(){ this.hide(); },
+					cancel: function(){ this.hide(); }
+				}
+			});
+
+			$('#wModal_delete').wModal({
+				position:'cb',
+				offset:'100',
+				fxShow:'slideUp',
+				fxHide:'slideUp',
+				btns:{
+					delete: function(){ console.log('original delete'); this.hide(); },
+					cancel: function(){ this.hide(); }
+				}
+			});
+
+			$('#wModal_ok').wModal({
+				position:'rb',
+				offset:'30',
+				fxShow:'slideLeft',
+				fxHide:'slideRight',
+				btns:{
+					ok: function(){ console.log('original ok'); this.hide(); },
+					cancel: function(){ this.hide(); }
+				}
+			});
+
+			$('#wModal_info').wModal({
+				position:'lb',
+				offset:'5',
+				fxShow:'slideDown',
+				fxHide:'slideUp',
+				btns:{
+					done: function(){ console.log('original info'); this.hide(); },
+					cancel: function(){ this.hide(); }
+				}
+			});
+
+			$('#wModal_exit').wModal({
+				position:'rm',
+				fxShow:'slideUp',
+				fxHide:'slideDown',
+				btns:{
+					exit: function(){ console.log('original exit'); this.hide(); },
+					cancel: function(){ this.hide(); }
+				}
+			});
+
+			$('#wModal_logout').wModal({
+				position:'rt',
+				offset:'30',
+				fxShow:'slideRight',
+				fxHide:'slideLeft',
+				btns:{
+					logout: function(){ console.log('original logout'); this.hide(); },
+					cancel: function(){ this.hide(); }
+				}
+			});
+		});
+	</script>
+
+	<!-- preloaded teplates -->
+	<script type="text/javascript">
+
+	</script>
+
+</head>
+<body>
+	<input type="button" value="yesNo Original" onclick="$('#wModal_yesNo').wModal('show');"/>
+	<input type="button" value="yesNo Overwrite" onclick="yesNoOverwrite()"/>
+	<input type="button" value="yesNo Multi" onclick="yesNoMulti();"/>
+
+	<input type="button" value="delete" onclick="$('#wModal_delete').wModal('show');"/>
+	<input type="button" value="ok" onclick="$('#wModal_ok').wModal('show');"/>
+	<input type="button" value="info" onclick="$('#wModal_info').wModal('show');"/>
+	<input type="button" value="exit" onclick="$('#wModal_exit').wModal('show');"/>
+	<input type="button" value="logout" onclick="$('#wModal_logout').wModal('show');"/>
+
+	<script type="text/javascript">
+		function yesNoOverwrite()
+		{
+			$('#wModal_yesNo').wModal('show', {
+				position:'lt',
+				offset:'50',
+				fxShow:'fade',
+				fxHide:'fade',
+				msg:'Try clicking on the original yes to see the original defaults ;)',
+				btns:{
+					yes: function()
+					{
+						console.log('yes left top');
+						this.hide();
+					}
+				}
+			});
+		}
+
+		function yesNoMulti()
+		{
+			$('#wModal_yesNo').wModal('show', {
+				position:'rb',
+				fxShow:'slideLeft',
+				fxHide:'slideRight',
+				msg:'Keep pushing the <span style="color:blue;">"Yes"</span> button to see the prompts cycle recursively.',
+				btns:{
+					yes: function()
+					{
+						$('#wModal_info').wModal('show', {
+							btns:{
+								done: function(){ yesNoMulti(); },
+								cancel: function(){ yesNoMulti(); }
+							}
+						});
+					}
+				}
+			});
+		}
+	</script>
+	
+	<!--
+
+		// toggle between prompts - callling another one automatically swaps
+
+		// boostrap demo
+
+		Most of the modals out there had either not enough options or too many and weren't too flexible either way.  I wanted to create a modal system that was very flexible that came out with some nice options out of the box and made it very easy to add customized prompts and effects.
+
+		Examples...
+
+		Adding your own effects...
+
+		Styling...
+		
+	-->
+
+	<div id="templates">
+		<script type="text/template" id="wModal_booya">
+			<div class="_wModal _wModal_booya">
+				Booya!
+
+				<span class="btn_booya">booya</span>
+			</div>
+		</script>
+	</div>
+
+</body>
+</html>

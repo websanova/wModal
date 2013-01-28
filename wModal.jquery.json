@@ -1,0 +1,40 @@
+{
+  "name": "wModal",
+  "title": "wModal jQuery Plugin",
+  "description": "A jQuery modal plugin by Websanova.  Comes with alerts, dialogs and themes out of the box.",
+  "keywords": [
+    "websanova",
+    "wmodal",
+    "wModal",
+    "modal",
+    "popup",
+    "alert",
+    "prompt"
+  ],
+  "version": "1.0.0",
+  "author": {
+    "name": "Websanova",
+    "email": "rob@websanova.com",
+    "url": "http://websanova.com"
+  },
+  "maintainers": [
+    {
+      "name": "Websanova",
+      "email": "rob@websanova.com",
+      "url": "http://websanova.com"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/websanova/wModal#license"
+    }
+  ],
+  "bugs": "https://github.com/websanova/wModal/issues",
+  "homepage": "http://websanova.com/plugins/modal",
+  "docs": "https://github.com/websanova/wModal#wmodaljs",
+  "download": "https://github.com/websanova/wModal/tags",
+  "dependencies": {
+    "jquery": ">=1.5"
+  }
+}

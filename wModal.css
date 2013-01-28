@@ -1,0 +1,130 @@
+/***********************************************
+ * Layout
+ ***********************************************/
+#_wModal_bg{background-color:#000; opacity:0.2; z-index:10000;}
+#_wModal_pixel{z-index:10001;}
+
+/***********************************************
+ * Global
+ ***********************************************/
+._wModal{
+	position:relative; width:200px; overflow:hidden;
+	font-family:verdana; font-size:12px; line-height:14px;
+	background-color:#FFF; color:#333;
+	border:1px solid rgba(51, 51, 51, 0.5); border-radius:8px;
+	box-shadow:0 3px 7px rgba(0, 0, 0, 0.3);
+}
+._wModal_header{
+	padding:10px;
+	font-size:14px; font-weight:bold;
+	border-bottom:solid 1px #DDD;
+}
+._wModal_close{
+	position:absolute; right:10px; top:10px;
+	font-weight:normal; font-size:12px; cursor:pointer;
+	color: #BABABA;
+}
+._wModal_msg{
+	padding:30px;
+	color:#3A3A3A;
+	text-shadow: rgba(255, 255, 255, 0.75) 0 1px 1px;
+}
+._wModal_btns_left,
+._wModal_btns_center,
+._wModal_btns_right{
+	padding:15px;
+	font-size:10px; font-weight:bold;
+	border-top:solid 1px #DDD;
+	background-color:#EFEFEF;
+}
+._wModal_btns_left{text-align:left;}
+._wModal_btns_center{text-align:center;}
+._wModal_btns_right{text-align:right;}
+
+._wModal_btn{
+	display:inline-block; width:90px; height:25px; line-height:25px;
+	margin-left:10px;
+	text-align:center; cursor:pointer;
+	border-radius:5px;
+}
+
+/***********************************************
+ * Colors
+ ***********************************************/
+
+/*** blue ***/
+._wModal_btn_blue{
+	box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.0470588) 0px 1px 2px 0px;
+	text-shadow:rgba(0, 0, 0, 0.247059) 0px -1px 0px;
+	border:1px solid rgba(0, 0, 0, 0.0980392);
+	border-bottom-color:rgba(0, 0, 0, 0.247059);
+	background-color:#006DCC;
+	color:#FFF;
+}
+._wModal_btn_blue:hover{background-color:#0044CC}
+
+/*** grey ***/
+._wModal_btn_grey{
+	box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.0470588) 0px 1px 2px 0px;
+	text-shadow:rgba(255, 255, 255, 0.75) 0 1px 1px;
+	border:1px solid rgba(0, 0, 0, 0.14902);
+	border-bottom-color:rgba(0, 0, 0, 0.247059);
+	background-color:#F5F5F5;
+	color:#333;
+}
+._wModal_btn_grey:hover{background-color:#E6E6E6;}
+
+/*** greeen ***/
+._wModal_btn_green{
+	box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.0470588) 0px 1px 2px 0px;
+	text-shadow:rgba(0, 0, 0, 0.247059) 0px -1px 0px;
+	border:1px solid rgba(0, 0, 0, 0.0980392);
+	border-bottom-color:rgba(0, 0, 0, 0.247059);
+	background-color:#5BB75B;
+	color:#FFF;
+}
+._wModal_btn_green:hover{background-color:#51A351;}
+
+/*** orange ***/
+._wModal_btn_orange{
+	box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.0470588) 0px 1px 2px 0px;
+	text-shadow:rgba(0, 0, 0, 0.247059) 0px -1px 0px;
+	border:1px solid rgba(0, 0, 0, 0.0980392);
+	border-bottom-color: rgba(0, 0, 0, 0.247059);
+	background-color:#FAA732;
+	color:#FFF;
+}
+._wModal_btn_orange:hover{background-color:#F89406;}
+
+/*** delete ***/
+._wModal_btn_red{
+	box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.0470588) 0px 1px 2px 0px;
+	text-shadow:rgba(0, 0, 0, 0.247059) 0px -1px 0px;
+	border:1px solid rgba(0, 0, 0, 0.0980392);
+	border-bottom-color:rgba(0, 0, 0, 0.247059);
+	background-color:#DA4F49;
+	color:#FFF;
+}
+._wModal_btn_red:hover{background-color:#BD362F;}
+
+/*** lightblue ***/
+._wModal_btn_lightblue{
+	box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.0470588) 0px 1px 2px 0px;
+	text-shadow:rgba(0, 0, 0, 0.247059) 0px -1px 0px;
+	border:1px solid rgba(0, 0, 0, 0.0980392);
+	border-bottom-color:rgba(0, 0, 0, 0.247059);
+	background-color:#49AFCD;
+	color:#FFF;
+}
+._wModal_btn_lightblue:hover{background-color:#2F96B4;}
+
+/*** black ***/
+._wModal_btn_black{
+	box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.0470588) 0px 1px 2px 0px;
+	text-shadow:rgba(0, 0, 0, 0.247059) 0px -1px 0px;
+	border:1px solid rgba(0, 0, 0, 0.0980392);
+	border-bottom-color:rgba(0, 0, 0, 0.247059);
+	background-color:#363636;
+	color:#FFF;
+}
+._wModal_btn_black:hover{background-color:#222222;}
