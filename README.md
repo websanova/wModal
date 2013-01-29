@@ -19,8 +19,8 @@ Available options with notes, the values here are the defaults.
 $('#_wModal_yesNo').wTooltip({
     position    : 'cm',     // position of modal (lt, ct, rt, rm, rb, cb, lb, lm, cm)
     offset      : '10',       // offset of modal from edges if not in "m" or "c" position
-    fxShow      : 'none',   // show effects (fade, slideUp, slideDown, slideLeft, slideRight)
-    fxHide      : 'none',   // hide effects (fade, slideUp, slideDown, slideLeft, slideRight)
+    fxShow      : 'none',   // show effects (fade, slideUp, slideDown, slideLeft, slideRight, rotateUp, rotateDown, rotateLeft, rotateRight)
+    fxHide      : 'none',   // hide effects (fade, slideUp, slideDown, slideLeft, slideRight, rotateUp, rotateDown, rotateLeft, rotateRight)
     btns        : {},       // button callbacks
     msg         : null      // optional message to set if "_wModal_msg" class is set
 });
