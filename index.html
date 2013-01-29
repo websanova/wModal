@@ -85,6 +85,7 @@
 	<input type="button" value="yesNo Original" onclick="$('#wModal_yesNo').wModal('show');"/>
 	<input type="button" value="yesNo Overwrite" onclick="yesNoOverwrite()"/>
 	<input type="button" value="yesNo Multi" onclick="yesNoMulti();"/>
+	<input type="button" value="yesNo Rotate" onclick="yesNoRotate();"/>
 
 	<input type="button" value="delete" onclick="$('#wModal_delete').wModal('show');"/>
 	<input type="button" value="ok" onclick="$('#wModal_ok').wModal('show');"/>
@@ -131,7 +132,17 @@
 				}
 			});
 		}
+
+		function yesNoRotate()
+		{
+			$('#wModal_yesNo').wModal('show', {
+				fxShow:'rotateLeft',
+				fxHide:'rotateRight'
+			});
+		}
 	</script>
+
+	<div id="templates"></div>
 
 </body>
 </html>

@@ -8,7 +8,7 @@
  * @license         This websanova jQuery modal plugin is dual licensed under the MIT and GPL licenses.
  * @link            http://www.websanova.com
  * @github          http://github.com/websanova/modal
- * @version			1.0.1
+ * @version			1.1.0
  *
  ******************************************/
 
@@ -73,6 +73,7 @@
 		this.elem = elem;
 
 		this.tempButtons = {};
+		this.rotationTimer = null;
 
 		return this;
 	}
@@ -255,6 +256,7 @@
 		 /*** slide helper ***/
 		 fxSlide: function(state, position, value)
 		 {
+		 	var _this = this;
 		 	var css = {};
 		 	css[position] = value;
 
@@ -269,6 +271,7 @@
 			 	this.modal.show();
 			 	
 			 	css[position] = offset[position];
+
 			 	this.modal.animate(css);
 			 }
 			 else
@@ -276,6 +279,34 @@
 			 	var _this = this;
 		 		this.modal.animate(css, function(){ _this.modal.hide(); _this.bg.hide(); });
 			 }
-		 }
+		 },
+
+		fxShowRotateUp: function(){ this.fxRotate(); this.fxShowSlideUp(); },
+		fxHideRotateUp: function(){ this.fxRotate(); this.fxHideSlideUp(); },
+
+		fxShowRotateDown: function(){ this.fxRotate(); this.fxShowSlideDown(); },
+		fxHideRotateDown: function(){ this.fxRotate(); this.fxHideSlideDown(); },
+
+		fxShowRotateLeft: function(){ this.fxRotate(); this.fxShowSlideLeft(); },
+		fxHideRotateLeft: function(){ this.fxRotate(); this.fxHideSlideLeft(); },
+
+		fxShowRotateRight: function(){ this.fxRotate(); this.fxShowSlideRight(); },
+		fxHideRotateRight: function(){ this.fxRotate(); this.fxHideSlideRight(); },
+
+		/*** rotate helper ***/
+		fxRotate: function()
+		{
+			var _this = this;
+			this.rotationDegree = 0;
+
+			this.rotationTimer = setInterval(function(){
+
+				_this.rotationDegree += 60;
+				_this.modal.css('-webkit-transform', 'rotate(' + _this.rotationDegree + 'deg)');
+				_this.modal.css('-moz-transform', 'rotate(' + _this.rotationDegree + 'deg)');
+
+				if(_this.rotationDegree % 360 === 0) clearInterval(_this.rotationTimer);
+			}, 80);
+		}
 	}
 })(jQuery);
