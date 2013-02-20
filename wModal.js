@@ -8,7 +8,7 @@
  * @license         This websanova jQuery modal plugin is dual licensed under the MIT and GPL licenses.
  * @link            http://www.websanova.com
  * @github          http://github.com/websanova/modal
- * @version			1.1.0
+ * @version			1.1.1
  *
  ******************************************/
 
@@ -199,12 +199,12 @@
 
 			this.pixel.children('._wModal_holder').hide();
 
-			this['fxShow' + this.tempFxShow[0].toUpperCase() + this.tempFxShow.substring(1)].apply(this);
+			this['fxShow' + this.tempFxShow.charAt(0).toUpperCase() + this.tempFxShow.substring(1)].apply(this);
 		},
 
 		hide: function()
 		{
-			this['fxHide' + this.tempFxHide[0].toUpperCase() + this.tempFxHide.substring(1)].apply(this);
+			this['fxHide' + this.tempFxHide.charAt(0).toUpperCase() + this.tempFxHide.substring(1)].apply(this);
 		},
 
 		/************************************************

@@ -18,9 +18,9 @@
 			
 			$('#wModal_yesNo').wModal({
 				btns:{
-					yes: function(){ console.log('original yes'); this.hide(); },
-					no: function(){ this.hide(); },
-					cancel: function(){ this.hide(); }
+					'yes': function(){ console.log('original yes'); this.hide(); },
+					'no': function(){ this.hide(); },
+					'cancel': function(){ this.hide(); }
 				}
 			});
 
@@ -30,8 +30,8 @@
 				fxShow:'slideUp',
 				fxHide:'slideUp',
 				btns:{
-					delete: function(){ console.log('original delete'); this.hide(); },
-					cancel: function(){ this.hide(); }
+					'delete': function(){ console.log('original delete'); this.hide(); },
+					'cancel': function(){ this.hide(); }
 				}
 			});
 
@@ -41,8 +41,8 @@
 				fxShow:'slideLeft',
 				fxHide:'slideRight',
 				btns:{
-					ok: function(){ console.log('original ok'); this.hide(); },
-					cancel: function(){ this.hide(); }
+					'ok': function(){ console.log('original ok'); this.hide(); },
+					'cancel': function(){ this.hide(); }
 				}
 			});
 
@@ -52,8 +52,8 @@
 				fxShow:'slideDown',
 				fxHide:'slideUp',
 				btns:{
-					done: function(){ console.log('original info'); this.hide(); },
-					cancel: function(){ this.hide(); }
+					'done': function(){ console.log('original info'); this.hide(); },
+					'cancel': function(){ this.hide(); }
 				}
 			});
 
@@ -62,8 +62,8 @@
 				fxShow:'slideUp',
 				fxHide:'slideDown',
 				btns:{
-					exit: function(){ console.log('original exit'); this.hide(); },
-					cancel: function(){ this.hide(); }
+					'exit': function(){ console.log('original exit'); this.hide(); },
+					'cancel': function(){ this.hide(); }
 				}
 			});
 
@@ -73,8 +73,8 @@
 				fxShow:'slideRight',
 				fxHide:'slideLeft',
 				btns:{
-					logout: function(){ console.log('original logout'); this.hide(); },
-					cancel: function(){ this.hide(); }
+					'logout': function(){ console.log('original logout'); this.hide(); },
+					'cancel': function(){ this.hide(); }
 				}
 			});
 		});
@@ -103,7 +103,7 @@
 				fxHide:'fade',
 				msg:'Try clicking on the original yes to see the original defaults ;)',
 				btns:{
-					yes: function()
+					'yes': function()
 					{
 						console.log('yes left top');
 						this.hide();
@@ -120,12 +120,12 @@
 				fxHide:'slideRight',
 				msg:'Keep pushing the <span style="color:blue;">"Yes"</span> button to see the prompts cycle recursively.',
 				btns:{
-					yes: function()
+					'yes': function()
 					{
 						$('#wModal_info').wModal('show', {
 							btns:{
-								done: function(){ yesNoMulti(); },
-								cancel: function(){ yesNoMulti(); }
+								'done': function(){ yesNoMulti(); },
+								'cancel': function(){ yesNoMulti(); }
 							}
 						});
 					}

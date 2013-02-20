@@ -1,7 +1,11 @@
 /***********************************************
  * Layout
  ***********************************************/
-#_wModal_bg{background-color:#000; opacity:0.2; z-index:10000;}
+#_wModal_bg{
+	background-color:#000; z-index:10000;
+	opacity:0.2; filter:alpha(opacity=20);
+}
+
 #_wModal_pixel{z-index:10001;}
 
 /***********************************************
