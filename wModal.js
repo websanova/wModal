@@ -8,7 +8,7 @@
  * @license         This websanova jQuery modal plugin is dual licensed under the MIT and GPL licenses.
  * @link            http://www.websanova.com
  * @github          http://github.com/websanova/modal
- * @version			1.1.1
+ * @version			1.1.2
  *
  ******************************************/
 

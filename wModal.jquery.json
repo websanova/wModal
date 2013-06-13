@@ -1,7 +1,7 @@
 {
   "name": "wModal",
   "title": "wModal jQuery Plugin",
-  "description": "A jQuery modal plugin by Websanova.  Comes with alerts, dialogs and themes out of the box.",
+  "description": "A jQuery modal plugin that allows you to easily setup modals using html templates.  You can easily attach events to buttons in your modals and it comes with a lot of cool effects out of the box.",
   "keywords": [
     "websanova",
     "wmodal",
@@ -11,7 +11,7 @@
     "alert",
     "prompt"
   ],
-  "version": "1.1.1",
+  "version": "1.1.2",
   "author": {
     "name": "Websanova",
     "email": "rob@websanova.com",
@@ -31,7 +31,7 @@
     }
   ],
   "bugs": "https://github.com/websanova/wModal/issues",
-  "homepage": "http://websanova.com/plugins/modal",
+  "homepage": "http://wmodal.websanova.com",
   "docs": "https://github.com/websanova/wModal#wmodaljs",
   "download": "https://github.com/websanova/wModal/tags",
   "dependencies": {

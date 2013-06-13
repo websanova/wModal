@@ -1,14 +1,15 @@
 # wModal.js
 
-A jQuery modal plugin. [Check out the live demo](http://www.websanova.com/plugins/modals).
+A jQuery modal plugin that allows you to easily setup modals using html templates.  You can easily attach events to buttons in your modals and it comes with a lot of cool effects out of the box.
+
+* [View the wModal demo](http://wmodal.websanova.com)
+* [Download the lastest version of wModal](https://github.com/websanova/wModal/tags)
 
 
- - [Settings](https://github.com/websanova/wModal#settings)
- - [Examples](https://github.com/websanova/wModal#examples)
- - [Adding Messages](https://github.com/websanova/wModal#adding-messages)
- - [Adding Modals](https://github.com/websanova/wModal#adding-modals)
- - [Adding Buttons](https://github.com/websanova/wModal#adding-buttons)
- - [Adding Effects](https://github.com/websanova/wModal#adding-effects)
+## Related Plugins
+
+* [wModal](http://wmodal.websanova.com) - Clean looking and easy to use modals.
+* [wHumanMsg](http://whumanmsg.websanova.com) - Simple user prompting.
 
 
 ## Settings
@@ -16,9 +17,9 @@ A jQuery modal plugin. [Check out the live demo](http://www.websanova.com/plugin
 Available options with notes, the values here are the defaults.
 
 ```
-$('#_wModal_yesNo').wTooltip({
+$('#_wModal_yesNo').wModal({
     position    : 'cm',     // position of modal (lt, ct, rt, rm, rb, cb, lb, lm, cm)
-    offset      : '10',       // offset of modal from edges if not in "m" or "c" position
+    offset      : '10',     // offset of modal from edges if not in "m" or "c" position
     fxShow      : 'none',   // show effects (fade, slideUp, slideDown, slideLeft, slideRight, rotateUp, rotateDown, rotateLeft, rotateRight)
     fxHide      : 'none',   // hide effects (fade, slideUp, slideDown, slideLeft, slideRight, rotateUp, rotateDown, rotateLeft, rotateRight)
     btns        : {},       // button callbacks
@@ -29,9 +30,18 @@ $('#_wModal_yesNo').wTooltip({
 
 ## Examples
 
+Include plugin files:
+
+```js
+<script type="text/javascript" src="./wModal.js"></script>
+<link rel="Stylesheet" type="text/css" href="./wModal.css" />
+```
+
+### create
+
 Modals can be any piece of html and you can create your own or build one using something like Twitter Boostrap.  You can stylize to your hearts content or use some of the defaults provided in wModal.
 
-```
+```html
 <script type="text/template" id="wModal_yesNo">
     <div class="_wModal _wModal_yesNo">
         <div class="_wModal_header">
@@ -49,10 +59,9 @@ Modals can be any piece of html and you can create your own or build one using s
 </script>
 ```
 
-
 We can then initialize any modal like so:
 
-```
+```js
 $('#wModal_yesNo').wModal({
     position:'lt',
     btns:{
@@ -65,15 +74,15 @@ $('#wModal_yesNo').wModal({
 });
 ```
 
-We would then call the modal:
+display
 
-```
+```js
 $('#wModal_yesNo').wModal('show');
 ```
 
 Any of the inital values can be overwritten temporarily for any other call:
 
-```
+```js
 $('#wModal_yesNo').wModal('show', {
     offset:'50',
     fxShow:'slideUp',
@@ -90,12 +99,12 @@ $('#wModal_yesNo').wModal('show', {
 
 Calling the original modal without options will again display the modal with the initial settings:
 
-```
+```js
 $('#wModal_yesNo').wModal('show');
 ```
 
 
-## Adding Messages
+### messages
 
 There is an optional key class that can be set named `_wModal_msg`, which if set will allow you to set messages on the fly. Using the example above we could then set the `msg` setting to any string and it will appear in the target `wModal_msg` area.
 
@@ -106,7 +115,7 @@ $('#wModal_yesNo').wModal('show', {msg:"This is a temporary message."});
 Note that if the class `_wModal_msg` is not set then the `msg` option will not do anything and you will need to code your own messages into your prompts.
 
 
-## Adding Modals
+### adding modals
 
 The plugin can work off any piece of `html`, with the only requirement being that the modal should have some set width.  You can then use any of the show/hide effects available to the plugin.
 
@@ -115,7 +124,7 @@ Chances are, however that you will want to add some handlers to your button prom
 I would recommend using a separate templates file to keep all your prompts nicely organized in, making it easier to modify existing ones and add new ones to the mix.
 
 
-## Adding Buttons
+### adding buttons
 
 You can set as many buttons as you like using the `btns` option.
 
@@ -144,7 +153,7 @@ Button handlers are attached based on a naming convention in order to give you f
 In the case above `wModal` would look for any elements with class names: `_wModal_btn_yes`, `_wModal_btn_no`, and `_wModal_btn_cancel`.
 
 
-## Adding Effects
+### adding effects
 
 The plugin comes packaged with many effects (check options for a full list), however it's easy to add your own.  The effects are called on two key words, `fxShow` and `fxHide`, take a look at the fade effects:
 
@@ -167,6 +176,7 @@ We can then set the `fxShow` and `fxHide` options to `fade`.  You can add as man
 
 ## Resources
 
+* [More jQuery plugins by Websanova](http://websanova.com/plugins)
 * [jQuery Plugin Development Boilerplate](http://www.websanova.com/tutorials/jquery/jquery-plugin-development-boilerplate)
 * [The Ultimate Guide to Writing jQuery Plugins](http://www.websanova.com/tutorials/jquery/the-ultimate-guide-to-writing-jquery-plugins)
 

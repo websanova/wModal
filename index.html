@@ -1,148 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-
-	<title>Websanova Modal</title>
-	
-	<script type="text/javascript" src="./inc/jquery.1.9.0.min.js"></script>
-	
-	<link rel="Stylesheet" type="text/css" href="./wModal.css" />
-	<script type="text/javascript" src="./wModal.js"></script>
-	
-	<!-- dynamically load prompts -->
-	<script type="text/javascript">
-		$.get('./prompts.html', function(data)
-		{
-			$('#templates').html(data);
-			
-			$('#wModal_yesNo').wModal({
-				btns:{
-					'yes': function(){ console.log('original yes'); this.hide(); },
-					'no': function(){ this.hide(); },
-					'cancel': function(){ this.hide(); }
-				}
-			});
-
-			$('#wModal_delete').wModal({
-				position:'cb',
-				offset:'100',
-				fxShow:'slideUp',
-				fxHide:'slideUp',
-				btns:{
-					'delete': function(){ console.log('original delete'); this.hide(); },
-					'cancel': function(){ this.hide(); }
-				}
-			});
-
-			$('#wModal_ok').wModal({
-				position:'rb',
-				offset:'30',
-				fxShow:'slideLeft',
-				fxHide:'slideRight',
-				btns:{
-					'ok': function(){ console.log('original ok'); this.hide(); },
-					'cancel': function(){ this.hide(); }
-				}
-			});
-
-			$('#wModal_info').wModal({
-				position:'lb',
-				offset:'5',
-				fxShow:'slideDown',
-				fxHide:'slideUp',
-				btns:{
-					'done': function(){ console.log('original info'); this.hide(); },
-					'cancel': function(){ this.hide(); }
-				}
-			});
-
-			$('#wModal_exit').wModal({
-				position:'rm',
-				fxShow:'slideUp',
-				fxHide:'slideDown',
-				btns:{
-					'exit': function(){ console.log('original exit'); this.hide(); },
-					'cancel': function(){ this.hide(); }
-				}
-			});
-
-			$('#wModal_logout').wModal({
-				position:'rt',
-				offset:'30',
-				fxShow:'slideRight',
-				fxHide:'slideLeft',
-				btns:{
-					'logout': function(){ console.log('original logout'); this.hide(); },
-					'cancel': function(){ this.hide(); }
-				}
-			});
-		});
-	</script>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="jquery, plugin, modal, dialog, popup, alert, message, prompt" />
+    <meta name="description" content="A jQuery modal plugin that allows you to easily setup modals using html templates.  You can easily attach events to buttons in your modals and it comes with a lot of cool effects out of the box." />
+    <meta name = "owner" content = "Websanova" />
+    <link rel="icon" type="image/vnd.microsoft.icon"  href="./assets/img/favicon.ico" />
+    <title>Websanova :: wModal</title>
+    
+    <script type="text/javascript" src="./assets/jquery.1.9.1.min.js"></script>
+    <link rel="Stylesheet" type="text/css" href="./assets/demo.css" />
 </head>
 <body>
-	<input type="button" value="yesNo Original" onclick="$('#wModal_yesNo').wModal('show');"/>
-	<input type="button" value="yesNo Overwrite" onclick="yesNoOverwrite()"/>
-	<input type="button" value="yesNo Multi" onclick="yesNoMulti();"/>
-	<input type="button" value="yesNo Rotate" onclick="yesNoRotate();"/>
+    <header>
+        <a id="header-logo" href="http://websanova.com" target="_blank"></a>
 
-	<input type="button" value="delete" onclick="$('#wModal_delete').wModal('show');"/>
-	<input type="button" value="ok" onclick="$('#wModal_ok').wModal('show');"/>
-	<input type="button" value="info" onclick="$('#wModal_info').wModal('show');"/>
-	<input type="button" value="exit" onclick="$('#wModal_exit').wModal('show');"/>
-	<input type="button" value="logout" onclick="$('#wModal_logout').wModal('show');"/>
+        <div id="header-links">
+            <a href="http://websanova.com">Home</a>
+            <a href="http://websanova.com/plugins">Plugins</a>
+            <a href="http://websanova.com/extensions">Extensions</a>
+        </div>
+    </header>   
 
-	<script type="text/javascript">
-		function yesNoOverwrite()
-		{
-			$('#wModal_yesNo').wModal('show', {
-				position:'lt',
-				offset:'50',
-				fxShow:'fade',
-				fxHide:'fade',
-				msg:'Try clicking on the original yes to see the original defaults ;)',
-				btns:{
-					'yes': function()
-					{
-						console.log('yes left top');
-						this.hide();
-					}
-				}
-			});
-		}
+    <div id="content">
+        <h1 id="plugin-name">wModal.js</h1>
 
-		function yesNoMulti()
-		{
-			$('#wModal_yesNo').wModal('show', {
-				position:'rb',
-				fxShow:'slideLeft',
-				fxHide:'slideRight',
-				msg:'Keep pushing the <span style="color:blue;">"Yes"</span> button to see the prompts cycle recursively.',
-				btns:{
-					'yes': function()
-					{
-						$('#wModal_info').wModal('show', {
-							btns:{
-								'done': function(){ yesNoMulti(); },
-								'cancel': function(){ yesNoMulti(); }
-							}
-						});
-					}
-				}
-			});
-		}
+        <div id="addthis-toolbox" class="addthis_toolbox addthis_default_style">
+            <a id="github-button" href="https://github.com/websanova/wModal" target="_blank" title="GitHub"></a>
+            <a class="addthis_button_facebook" addthis:url="http://wmodal.websanova.com" addthis:title="Websanova wModal Demo"></a>
+            <a class="addthis_button_twitter" addthis:url="http://wmodal.websanova.com" addthis:title="Websanova wModal Demo"></a>
+            <a class="addthis_button_google_plusone_share" addthis:url="http://wmodal.websanova.com" addthis:title="Websanova wModal Demo"></a>
+            <a class="addthis_button_reddit" addthis:url="http://wmodal.websanova.com" addthis:title="Websanova wModal Demo"></a>
+            <a class="addthis_button_dzone" addthis:url="http://wmodal.websanova.com" addthis:title="Websanova wModal Demo"></a>
+            <a class="addthis_button_compact" addthis:url="http://wmodal.websanova.com" addthis:title="Websanova wModal Demo"></a>
+        </div>
 
-		function yesNoRotate()
-		{
-			$('#wModal_yesNo').wModal('show', {
-				fxShow:'rotateLeft',
-				fxHide:'rotateRight'
-			});
-		}
-	</script>
+        <h2>About</h2>
 
-	<div id="templates"></div>
+        <div class="content-box">
+            A jQuery modal plugin that allows you to easily setup modals using html templates.  You can easily attach events to buttons in your modals and it comes with a lot of cool effects out of the box.
+        </div>
 
+        <ul>
+            <li><a href="https://github.com/websanova/wModal/tags">Download</a></li>
+            <li><a href="https://github.com/websanova/wModal#wmodaljs">Documentation</a></li>
+        </ul>
+
+        <h2>Related Plugins</h2>
+
+        <ul>
+            <li><a href="http://wtooltip.websanova.com">wTooltip</a> - Simple sleek looking tooltips.</li>
+            <li><a href="http://whumanmsg.websanova.com">wHumanMsg</a> - Simple user prompting.</li>
+        </ul>
+
+        <h2>Demo</h2>
+
+        <div class="content-box">
+            <input type="button" value="yesNo Original" onclick="$('#wModal_yesNo').wModal('show');"/>
+            <input type="button" value="yesNo Overwrite" onclick="yesNoOverwrite()"/>
+            <input type="button" value="yesNo Multi" onclick="yesNoMulti();"/>
+            <input type="button" value="yesNo Rotate" onclick="yesNoRotate();"/>
+
+            <input type="button" value="delete" onclick="$('#wModal_delete').wModal('show');"/>
+            <input type="button" value="ok" onclick="$('#wModal_ok').wModal('show');"/>
+            <input type="button" value="info" onclick="$('#wModal_info').wModal('show');"/>
+            <input type="button" value="exit" onclick="$('#wModal_exit').wModal('show');"/>
+            <input type="button" value="logout" onclick="$('#wModal_logout').wModal('show');"/>
+
+            <div id="templates"></div>
+        </div>
+
+        <link rel="Stylesheet" type="text/css" href="./wModal.css" />
+        <script type="text/javascript" src="./wModal.js"></script>
+        
+        <!-- dynamically load prompts -->
+        <script type="text/javascript">
+            $.get('./prompts.html', function(data)
+            {
+                $('#templates').html(data);
+                
+                $('#wModal_yesNo').wModal({
+                    btns:{
+                        'yes': function(){ console.log('original yes'); this.hide(); },
+                        'no': function(){ this.hide(); },
+                        'cancel': function(){ this.hide(); }
+                    }
+                });
+
+                $('#wModal_delete').wModal({
+                    position:'cb',
+                    offset:'100',
+                    fxShow:'slideUp',
+                    fxHide:'slideUp',
+                    btns:{
+                        'delete': function(){ console.log('original delete'); this.hide(); },
+                        'cancel': function(){ this.hide(); }
+                    }
+                });
+
+                $('#wModal_ok').wModal({
+                    position:'rb',
+                    offset:'30',
+                    fxShow:'slideLeft',
+                    fxHide:'slideRight',
+                    btns:{
+                        'ok': function(){ console.log('original ok'); this.hide(); },
+                        'cancel': function(){ this.hide(); }
+                    }
+                });
+
+                $('#wModal_info').wModal({
+                    position:'lb',
+                    offset:'5',
+                    fxShow:'slideDown',
+                    fxHide:'slideUp',
+                    btns:{
+                        'done': function(){ console.log('original info'); this.hide(); },
+                        'cancel': function(){ this.hide(); }
+                    }
+                });
+
+                $('#wModal_exit').wModal({
+                    position:'rm',
+                    fxShow:'slideUp',
+                    fxHide:'slideDown',
+                    btns:{
+                        'exit': function(){ console.log('original exit'); this.hide(); },
+                        'cancel': function(){ this.hide(); }
+                    }
+                });
+
+                $('#wModal_logout').wModal({
+                    position:'rt',
+                    offset:'30',
+                    fxShow:'slideRight',
+                    fxHide:'slideLeft',
+                    btns:{
+                        'logout': function(){ console.log('original logout'); this.hide(); },
+                        'cancel': function(){ this.hide(); }
+                    }
+                });
+            });
+
+            function yesNoOverwrite()
+            {
+                $('#wModal_yesNo').wModal('show', {
+                    position:'lt',
+                    offset:'50',
+                    fxShow:'fade',
+                    fxHide:'fade',
+                    msg:'Try clicking on the original yes to see the original defaults ;)',
+                    btns:{
+                        'yes': function()
+                        {
+                            console.log('yes left top');
+                            this.hide();
+                        }
+                    }
+                });
+            }
+
+            function yesNoMulti()
+            {
+                $('#wModal_yesNo').wModal('show', {
+                    position:'rb',
+                    fxShow:'slideLeft',
+                    fxHide:'slideRight',
+                    msg:'Keep pushing the <span style="color:blue;">"Yes"</span> button to see the prompts cycle recursively.',
+                    btns:{
+                        'yes': function()
+                        {
+                            $('#wModal_info').wModal('show', {
+                                btns:{
+                                    'done': function(){ yesNoMulti(); },
+                                    'cancel': function(){ yesNoMulti(); }
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+
+            function yesNoRotate()
+            {
+                $('#wModal_yesNo').wModal('show', {
+                    fxShow:'rotateLeft',
+                    fxHide:'rotateRight'
+                });
+            }
+        </script>
+
+        <h2>Resources</h2>
+
+        <ul>
+            <li><a href="http://websanova.com/plugins">More jQuery plugins by Websanova</a></li>
+            <li><a href="http://www.websanova.com/tutorials/jquery/the-ultimate-guide-to-writing-jquery-plugins">The Ultimate Guide to Writing jQuery Plugins</a></li>
+            <li><a href="http://www.websanova.com/tutorials/jquery/jquery-plugin-development-boilerplate">jQuery Plugin Development Boilerplate</a></li>
+        </ul>
+    </div>
+
+    <footer>
+        <div id="footer-icons">
+            <!--a id="youtube-icon" href="http://websanova.com/youtube" target="_blank"></a-->
+            <a id="stumbleupon-icon" href="http://websanova.com/stumbleupon" target="_blank"></a>
+            <a id="linkedin-icon" href="http://websanova.com/linkedin" target="_blank"></a>
+            <a id="facebook-icon" href="http://websanova.com/facebook" target="_blank"></a>
+            <a id="googleplus-icon" href="http://websanova.com/googleplus" target="_blank"></a>
+            <a id="twitter-icon" href="http://websanova.com/twitter" target="_blank"></a>
+            <a id="github-icon" href="http://websanova.com/github" target="_blank"></a>
+            <a id="rss-icon" href="http://websanova.com/feed" target="_blank"></a>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        if(window.location.protocol === 'file:') $('#addthis-toolbox').hide();
+    </script>
+
+    <!-- AddThis Button BEGIN -->
+    <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-504fdeb9241970a8"></script>
+    <!-- AddThis Button END -->
+
+    <!-- google analytics -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-12380236-11']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
 </body>
 </html>
