@@ -177,7 +177,7 @@ We can then set the `fxShow` and `fxHide` options to `fade`.  You can add as man
 ## Resources
 
 * [More jQuery plugins by Websanova](http://websanova.com/plugins)
-* [jQuery Plugin Development Boilerplate](http://www.websanova.com/blog/jquery/jquery-plugin-development-boilerplate)
+* [jQuery Plugin Development Boilerplate](http://wboiler.websanova.com)
 * [The Ultimate Guide to Writing jQuery Plugins](http://www.websanova.com/blog/jquery/the-ultimate-guide-to-writing-jquery-plugins)
 
 
